@@ -1,0 +1,32 @@
+<h2>Add Certification</h2>
+
+<%= form_tag(:controller => "certifications", :action => "create", :method => "post") do %>
+
+  <div class="field">
+    <%= label_tag(:certificate_name, "Certification Name") %><br />
+    <%= text_field_tag(:certificate_name) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:certificate_authority, "Certification Authority") %><br />
+    <%= text_field_tag(:certificate_authority) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:license_no, "License Number") %><br />
+    <%= text_field_tag(:license_no) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:certification_url, "Certification url") %><br/>
+    <%= text_field_tag(:certification_url) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:certification_date, "Certificate Date") %><br />
+    <%= datetime_local_field(:certificate, :certification_date) %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag("Save") %>
+  </div>
+<% end %>
+
+<button id="cancel" type="button" class="btn" onclick="hide('certification_form', 'certification_button')">Cancel</button>
+

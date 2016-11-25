@@ -1,0 +1,36 @@
+<h2>Add Experience</h2>
+
+<%= form_tag(:controller => "experiences", :action => "create", :method => "post") do  %>
+
+  <div class="field">
+    <%= label_tag(:company_name) %><br />
+    <%= text_field_tag(:company_name) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:title) %><br />
+    <%= text_field_tag(:title) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:location) %><br />
+    <%= text_field_tag(:location) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:from) %><br/>
+    <%= select_date Date.today, prefix: :start_date %>
+  </div>
+    <div class="field">
+    <%= label_tag(:to) %><br/>
+    <%= select_date Date.today, prefix: :start_date %>
+  </div>
+  <div class="field">
+    <%= label_tag(:description) %><br />
+    <%= text_field_tag(:description) %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag("Save") %>
+  </div>
+<% end %>
+<button id="cancel" type="button" class="btn" onclick="hide('experience_form','experience_button')">Cancel</button>
+
+

@@ -1,0 +1,23 @@
+<div class="col-md-8">
+<table class="table">
+<tr>
+  <th>Profile</th>
+  <th>Duration</th>
+  <th>Stipend</th>
+  <th>Company</th>
+  <th>Posted On</th>
+</tr>
+<% @jobs.each do |job|%>
+<tr>
+  <td><%= job.profile%></td>
+  <td><%= job.duration%></td>
+  <td><%= job.stipend%></td>
+  <td><%=job.brand.name%></td>
+  <td><%=job.created_at%></td>
+  <td><%= link_to 'Apply',{:controller => "dashboards", :action => "create", :student_id => current_student.id, :job_id => job.id }, :method => :post %></td>
+</tr>
+<%end%>
+</table>
+</div>
+
+

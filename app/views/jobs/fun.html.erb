@@ -1,0 +1,14 @@
+     <table>
+     <tr>
+     	<th>Profile</th>
+     	<th>Duration</th>
+     	<th>Stipend</th>
+     </tr>
+     <% @jobs.each do|job| %>
+     <tr>
+     <td><%=job.profile %></td>
+     <td><%=job.duration%></td>
+     <td><%=job.stipend%></td>
+     </tr>
+     <%end%>
+     </table>

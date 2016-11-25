@@ -1,0 +1,31 @@
+<h2>Add Project</h2>
+
+<%= form_tag(:controller => "projects", :action => "create", :method => "post") do  %>
+
+  <div class="field">
+    <%= label_tag(:company_name) %><br />
+    <%= text_field_tag(:company_name) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:Title) %><br />
+    <%= text_field_tag(:title) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:Location) %><br />
+    <%= text_field_tag(:location) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:time_period) %><br/>
+    <%= text_field_tag(:time_period) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:description) %><br />
+    <%= text_field_tag(:description) %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag("Save") %>
+  </div>
+<% end %>
+
+<button id="cancel" type="button" class="btn" onclick="hide('project_form','project_button')">Cancel</button>

@@ -1,0 +1,23 @@
+
+<%= form_for @brand, :class => "form-horizontal", :url => brand_jobs_path, :method => :post do |f| %>
+  <div class="form-group">
+    <%= f.fields_for :job do |jobs_form| %>
+        <%= jobs_form.label :profile, :class => "control-label col-sm-2" %>
+        <div class="col-sm-10">
+        <%= jobs_form.text_field :profile, :class => "form-control" %>
+        </div>
+        <%= jobs_form.label :duration, :class => "control-label col-sm-2" %>
+         <div class="col-sm-10">
+        <%= jobs_form.text_field :duration, :class => "form-control", :placeholder =>"In Months" %>
+         </div>
+        <%= jobs_form.label :stipend, :class => "control-label col-sm-2" %>
+         <div class="col-sm-10">
+        <%= jobs_form.text_field :stipend, :class => "form-control", :placeholder => "$" %>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+  <%= jobs_form.submit 'submit' %>
+</div>
+    <% end %>
+</div>
+<% end %>
+</div>

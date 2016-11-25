@@ -1,0 +1,115 @@
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-3"><%= gravatar_tag current_student.email, :class => "img-rounded", :size => 200 %></div>
+<div class="col-sm-3">
+<div class="text-primary"><h2><%= current_student.name%></h2></div>
+<%= current_student.email %><br>
+<%= current_student.contact %><br>
+</div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+<div class="panel panel-default">
+<div class="panel-header">Experience
+
+<div id="experience_button" type="button" class="btn add_thing" onclick="show('experience_form','experience_button')"><%= link_to "", experiences_new_path, :remote => true %></div>
+
+</div>
+<div class="panel-body panel_box">
+<% @experiences.each do |e| %>
+<div class="exp_company"><%= e.title %></div>
+<div class=""><%= e.company_name %></div>
+<%= e.location %>
+<div><%= e.from %> - <%= e.to %></div>
+<%= e.description %>
+<br>
+<% end %>	
+
+</div>
+
+
+
+<script type="text/javascript">
+	function show(target,th){
+document.getElementById(target).style.display = 'block';
+document.getElementById(th).style.display = 'none';
+}
+
+function hide(target,th){
+document.getElementById(target).style.display = 'none';
+document.getElementById(th).style.display = 'block';
+}
+</script>
+
+<div id="experience_form" hidden=true>
+	<%= render "forms/experience" %>
+</div>
+
+
+</div>
+</div>
+<div class="row">
+<h2>Certification</h2>
+
+<% @certifications.each do |c| %>
+<%= c.certificate_name %>
+<%= c.certificate_authority %>
+<%= c.license_no %>
+<%= c.certification_url %>
+<%= c.certification_date %>
+<br>
+<% end %>
+
+<div id="certification_form" hidden="true">
+<%= render "forms/certification" %>
+</div>
+
+<button id="certification_button" type="button" class="btn" onclick="show('certification_form','certification_button')"><%= link_to "Add Certification", :remote => true %></button>
+</div>
+
+<div class="row">
+<h2>Education</h2>
+
+<% @educations.each do |c| %>
+<%= c.school %>
+<%= c.from %>
+<%= c.to %>
+<%= c.degree %>
+<%= c.field_of_stude %>
+<%= c.grade %>
+<%= c.description %>
+<br>
+<% end %>
+
+<div id="education_form" hidden="true">
+<%= render "forms/education" %>
+</div>
+
+<button id="education_button" type="button" class="btn" onclick="show('education_form','education_button')"><%= link_to "Add Education", :remote => true %></button>
+</div>
+
+<div class="row">
+<h2>Course</h2>
+
+<button id="clickMeId" type="button" class="btn"><%= link_to "Add Course", :remote => true %></button>
+</div>
+
+<div class="row">
+<h2>Project</h2>
+
+<% @projects.each do |c| %>
+<%= c.title %>
+<%= c.occupation %>
+<%= c.from %>
+<%= c.to %>
+<%= c.project_url %>
+<%= c.description %>
+<br>
+<% end %>
+
+<div id="project_form" hidden="true">
+<%= render "forms/project" %>
+</div>
+
+<button id="project_button" type="button" class="btn" onclick="show('project_form','project_button')"><%= link_to "Add Project", :remote => true %></button>
+</div>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: MyString
+  duration: 1
+  stipend: 1
+  start_date: 2016-11-05 16:24:12
+  type: 
+  apply_by: 2016-11-05 16:24:12
+  user_id: 
+  brand_id: 
+
+two:
+  profile: MyString
+  duration: 1
+  stipend: 1
+  start_date: 2016-11-05 16:24:12
+  type: 
+  apply_by: 2016-11-05 16:24:12
+  user_id: 
+  brand_id: 

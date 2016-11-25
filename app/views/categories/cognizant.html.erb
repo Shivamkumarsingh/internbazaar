@@ -1,0 +1,18 @@
+<table>
+<tr>
+<th>Profile</th>
+<th>Duration</th>
+<th>Stipend</th>
+<th>Company</th>
+
+</tr>
+<% @cognizants.each do |job|%>
+<tr>
+<td><%= job.profile%></td>
+<td><%= job.duration%></td>
+<td><%= job.stipend%></td>
+<td><%=job.brand.name%></td>
+
+</tr>
+<%end%>
+</table>
